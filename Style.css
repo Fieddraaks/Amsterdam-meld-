@@ -751,3 +751,172 @@ button {
   width: 100%;
   height: 100%;
 }
+.custom-marker-wrapper {
+  background: transparent;
+  border: none;
+}
+
+.custom-marker {
+  width: 32px;
+  height: 32px;
+
+  border: 4px solid white;
+
+  border-radius: 50% 50% 50% 0;
+
+  transform: rotate(-45deg);
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.custom-marker span {
+  width: 8px;
+  height: 8px;
+
+  background: white;
+
+  border-radius: 50%;
+
+  position: absolute;
+
+  top: 8px;
+  left: 8px;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 16px;
+
+  box-shadow:
+    0 14px 35px rgba(0, 0, 0, 0.15);
+}
+
+.leaflet-popup-content {
+  margin: 18px;
+}
+
+.report-popup h3 {
+  margin-top: 8px;
+
+  font-size: 17px;
+  line-height: 1.3;
+}
+
+.popup-category {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color: var(--text-muted);
+
+  font-size: 11px;
+  font-weight: 750;
+
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.popup-category-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+}
+
+.popup-location {
+  margin-top: 5px;
+
+  color: var(--text-muted);
+
+  font-size: 12px;
+}
+
+.popup-description {
+  margin-top: 14px;
+
+  font-size: 13px;
+  line-height: 1.55;
+
+  color: #374151;
+}
+
+.popup-meta {
+  margin-top: 13px;
+
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.also-button {
+  width: 100%;
+
+  margin-top: 15px;
+
+  border: 1px solid var(--red);
+
+  background: white;
+
+  color: var(--red);
+
+  padding: 10px 12px;
+
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-weight: 750;
+
+  transition: 0.2s ease;
+}
+
+.also-button:hover,
+.also-button.active {
+  background: var(--red);
+  color: white;
+}
+
+.also-button span {
+  min-width: 28px;
+
+  padding: 3px 7px;
+
+  border-radius: 999px;
+
+  background: var(--red-light);
+
+  color: var(--red);
+
+  font-size: 11px;
+
+  text-align: center;
+}
+
+.also-button.active span {
+  background: rgba(255, 255, 255, 0.18);
+
+  color: white;
+}
+
+.leaflet-control-zoom {
+  border: none !important;
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.12) !important;
+}
+
+.leaflet-control-zoom a {
+  border: none !important;
+
+  color: #171717 !important;
+}
+
+.leaflet-control-attribution {
+  font-size: 9px !important;
+}
+
+.report-card {
+  cursor: pointer;
+}
