@@ -747,3 +747,7 @@ button {
     margin-right: -14px;
   }
 }
+#map {
+  width: 100%;
+  height: 100%;
+}
