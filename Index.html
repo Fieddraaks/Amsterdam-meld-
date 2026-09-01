@@ -1,1 +1,283 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Amsterdam Meldt</title>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">
+        <span>×</span>
+        <span>×</span>
+        <span>×</span>
+      </div>
+
+      <div>
+        <h1>Amsterdam Meldt</h1>
+        <p>Zie wat er speelt in jouw buurt</p>
+      </div>
+    </div>
+
+    <button class="primary-button" id="newReportButton">
+      + Nieuwe melding
+    </button>
+  </header>
+
+
+  <main class="app-layout">
+
+    <section class="map-section">
+
+      <div class="map-header">
+        <div>
+          <span class="eyebrow">Amsterdam</span>
+          <h2>Wat speelt er in de stad?</h2>
+        </div>
+
+        <div class="map-stats">
+          <strong>126</strong>
+          <span>actieve meldingen</span>
+        </div>
+      </div>
+
+
+      <div class="category-filters">
+        <button class="filter-button active" data-category="all">
+          Alles
+        </button>
+
+        <button class="filter-button" data-category="afval">
+          Afval
+        </button>
+
+        <button class="filter-button" data-category="fietsen">
+          Fietsen
+        </button>
+
+        <button class="filter-button" data-category="geluid">
+          Geluid
+        </button>
+
+        <button class="filter-button" data-category="verkeer">
+          Verkeer
+        </button>
+
+        <button class="filter-button" data-category="drukte">
+          Drukte
+        </button>
+
+        <button class="filter-button" data-category="voorzieningen">
+          Voorzieningen
+        </button>
+      </div>
+
+
+      <div class="map-container">
+
+        <div class="map-placeholder">
+
+          <div class="map-placeholder-content">
+            <div class="map-pin">●</div>
+
+            <h3>Interactieve kaart van Amsterdam</h3>
+
+            <p>
+              In de volgende stap plaatsen we hier de echte kaart met
+              meldingen verspreid door Amsterdam.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <aside class="sidebar">
+
+      <div class="sidebar-header">
+        <div>
+          <span class="eyebrow">Live overzicht</span>
+          <h2>Veel besproken</h2>
+        </div>
+
+        <button class="text-button">
+          Bekijk alles
+        </button>
+      </div>
+
+
+      <div class="report-list">
+
+        <article class="report-card">
+
+          <div class="report-card-top">
+            <span class="category-badge afval">
+              Afval
+            </span>
+
+            <span class="trend">
+              ↑ snel stijgend
+            </span>
+          </div>
+
+          <h3>Afval naast ondergrondse containers</h3>
+
+          <p class="location">
+            Gerard Douplein · De Pijp
+          </p>
+
+          <div class="report-card-footer">
+            <span>42 mensen hebben hier last van</span>
+          </div>
+
+        </article>
+
+
+        <article class="report-card">
+
+          <div class="report-card-top">
+            <span class="category-badge fietsen">
+              Fietsen
+            </span>
+          </div>
+
+          <h3>Fietsen blokkeren de stoep</h3>
+
+          <p class="location">
+            Stationsplein · Centrum
+          </p>
+
+          <div class="report-card-footer">
+            <span>31 mensen hebben hier last van</span>
+          </div>
+
+        </article>
+
+
+        <article class="report-card">
+
+          <div class="report-card-top">
+            <span class="category-badge verkeer">
+              Verkeer
+            </span>
+          </div>
+
+          <h3>Onveilige oversteekplaats</h3>
+
+          <p class="location">
+            Wibautstraat · Oost
+          </p>
+
+          <div class="report-card-footer">
+            <span>27 mensen hebben hier last van</span>
+          </div>
+
+        </article>
+
+      </div>
+
+    </aside>
+
+  </main>
+
+
+  <div class="modal-backdrop hidden" id="reportModal">
+
+    <div class="modal">
+
+      <div class="modal-header">
+        <div>
+          <span class="eyebrow">Nieuwe melding</span>
+          <h2>Wat speelt er?</h2>
+        </div>
+
+        <button class="close-button" id="closeModalButton">
+          ×
+        </button>
+      </div>
+
+
+      <form id="reportForm">
+
+        <div class="form-group">
+          <label for="category">
+            Categorie
+          </label>
+
+          <select id="category" required>
+            <option value="">Kies een categorie</option>
+            <option value="afval">Afval</option>
+            <option value="fietsen">Fietsen</option>
+            <option value="geluid">Geluid</option>
+            <option value="verkeer">Verkeer</option>
+            <option value="drukte">Drukte</option>
+            <option value="voorzieningen">Kapotte voorziening</option>
+          </select>
+        </div>
+
+
+        <div class="form-group">
+          <label for="location">
+            Locatie
+          </label>
+
+          <input
+            type="text"
+            id="location"
+            placeholder="Bijvoorbeeld Wibautstraat 120"
+            required
+          />
+        </div>
+
+
+        <div class="form-group">
+          <label for="description">
+            Omschrijving
+          </label>
+
+          <textarea
+            id="description"
+            rows="4"
+            placeholder="Beschrijf kort wat er aan de hand is..."
+            required
+          ></textarea>
+        </div>
+
+
+        <div class="form-group">
+          <label for="photo">
+            Foto
+          </label>
+
+          <input
+            type="file"
+            id="photo"
+            accept="image/*"
+          />
+        </div>
+
+
+        <button type="submit" class="primary-button full-width">
+          Melding plaatsen
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <script src="app.js"></script>
+
+</body>
+</html>
